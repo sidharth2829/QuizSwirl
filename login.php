@@ -24,7 +24,7 @@ if (isset($_POST["login"]))
         else 
         {
             $_SESSION['username'] = $username;
-            header("Location: quiz.html");
+            header("Location: quiz.php");
         }
     }
 }
