@@ -1,0 +1,102 @@
+body 
+{
+    font-family: 'Poppins', sans-serif;
+    background-image: url(/assets/2.jpg);
+    background-color: #f4f4f4;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.name
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    color: white;
+    text-shadow:  3px 1px 3px rgba(0, 0, 0, 0.907), 2px 1px 2px white;
+}
+
+.error-page-int
+{
+    width: 80%;
+    max-width: 500px;
+    margin: 50px auto 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.907), 2px 1px 2px white;
+    padding: 50px;
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 2px rgb(95, 86, 86);
+}
+
+.custom-login h3 
+{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.content-error 
+{
+    margin-top: 10px;
+}
+
+.form-group 
+{
+    margin-bottom: 20px;
+}
+
+label 
+{
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 1px rgb(95, 86, 86);
+}
+
+input[type="text"],
+input[type="password"] 
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btn-success 
+{
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    font-size: medium;
+    margin-left: 47%;
+    margin-right: 47%;
+}
+
+.btn-success:hover 
+{
+    background-color: #338938;
+}
+
+.alert 
+{
+    padding: 10px;
+    margin-top: 10px;
+    display: none;
+    border-radius: 3px;
+}
+
+.alert-success 
+{
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.alert-danger 
+{
+    background-color: #f44336;
+    color: #fff;
+}
