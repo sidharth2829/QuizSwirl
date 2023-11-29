@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Quiz Creator</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Admin Quiz Creator</h1>
+        </div>
+        <div class="main-content">
+            <div class="quiz-form">
+                <h2>Create New Quiz</h2>
+                <form action="process_quiz.php" method="post">
+                    <div class="form-group">
+                        <label for="question">Question:</label>
+                        <input type="text" id="question" name="question" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correctAnswer">Correct Answer:</label>
+                        <input type="text" id="correctAnswer" name="correctAnswer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wrongAnswer1">Wrong Answer 1:</label>
+                        <input type="text" id="wrongAnswer1" name="wrongAnswer1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wrongAnswer2">Wrong Answer 2:</label>
+                        <input type="text" id="wrongAnswer2" name="wrongAnswer2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wrongAnswer3">Wrong Answer 3:</label>
+                        <input type="text" id="wrongAnswer3" name="wrongAnswer3" required>
+                    </div>
+                    <button type="submit">Add Question</button>
+                </form>
+            </div>
+            <div class="quiz-preview">
+                <h2>Quiz Preview</h2>
+                <div id="previewContainer"></div>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

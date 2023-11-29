@@ -1,0 +1,87 @@
+/* admin_dashboard.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-list,
+.create-quiz,
+.admin-quizzes {
+    width: 30%;
+    background-color: #fff;
+    padding: 2%;
+    box-shadow: 0 0 0.3% rgba(0, 0, 0, 0.1);
+}
+
+.quiz-list h2,
+.create-quiz h2,
+.admin-quizzes h2 {
+    margin-top: 0;
+}
+
+.quiz-item,
+.admin-quiz-item {
+    border-bottom: 0.1% solid #ccc;
+    padding: 1% 0;
+}
+
+.quiz-item:last-child,
+.admin-quiz-item:last-child {
+    border-bottom: none;
+}
+
+.form-group {
+    margin-bottom: 1%;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 94%;
+    padding: 0.8%;
+    margin-top: 0.5%;
+    border-radius: 0.3%;
+    border: 0.1% solid #ccc;
+}
+
+button {
+    padding: 0.8% 1.5%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.3%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.admin-quizzes {
+    margin-left: 2%;
+}
+
+.admin-quizzes h2 {
+    margin-top: 2%;
+}
+
+/* Adjustments based on your design requirements can be made as needed */

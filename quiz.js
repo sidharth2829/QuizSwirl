@@ -1,70 +1,98 @@
-<!DOCTYPE html>
-<html>
+const questions = [
+    {
+        question: "Who wrote the play 'Romeo and Juliet'?",
+        answers: [
+            {text: "Charles Dickens", correct: false},
+            {text: "Jane Austen", correct: false},
+            {text: "William Shakespeare", correct: true},
+            {text: "Mark Twain", correct: false},
+        ]
+    },
+    {
+        question: "Which famous scientist developed the theory of general relativity?",
+        answers: [
+            {text: "Isaac Newton", correct: false},
+            {text: "Albert Einstein", correct: true},
+            {text: "Galileo Galilei", correct: false},
+            {text: "Charles Darwin", correct: false},
+        ]
+    },
+    {
+        question: "Which country is famous for the martial art known as Karate?",
+        answers: [
+            {text: "China", correct: false},
+            {text: "Brazil", correct: false},
+            {text: "Japan", correct: true},
+            {text: "India", correct: false},
+        ]
+    },
+    {
+        question: "Who is the author of the Harry Potter book series?",
+        answers: [
+            {text: "J.R.R. Tolkien", correct: false},
+            {text: "J.K. Rowling", correct: true},
+            {text: "George Orwell", correct: false},
+            {text: "Agatha Christie", correct: false},
+        ]
+    },
+    {
+        question: "Which of the following programming languages is often used for data analysis and scientific computing?",
+        answers: [
+            {text: "Java", correct: false},
+            {text: "Python", correct: true},
+            {text: "C++", correct: false},
+            {text: "Ruby", correct: false},
+        ]
+    },
+    {
+        question: "What is the largest mammal in the world?",
+        answers: [
+            {text: "Elephant", correct: false},
+            {text: "Blue whale", correct: true},
+            {text: "Giraffe", correct: false},
+            {text: "Lion", correct: false},
+        ]
+    },
+    {
+        question: "Which gas do plants absorb from the atmosphere during photosynthesis?",
+        answers: [
+            {text: "Oxygen", correct: false},
+            {text: "Carbon dioxide", correct: true},
+            {text: "Nitrogen", correct: false},
+            {text: "Hydrogen", correct: false},
+        ]
+    },
+    {
+        question: "Who painted the Mona Lisa?",
+        answers: [
+            {text: "Pablo Picasso", correct: false},
+            {text: "Leonardo da Vinci", correct: true},
+            {text: "Vincent van Gogh", correct: false},
+            {text: "Michelangelo", correct: false},
+        ]
+    },
+    {
+        question: "What is the largest planet in our solar system?",
+        answers: [
+            {text: "Earth", correct: false},
+            {text: "Mars", correct: false},
+            {text: "Jupiter", correct: true},
+            {text: "Venus", correct: false},
+        ]
+    },
+    {
+        question: "Who is the Greek god of the sea?",
+        answers: [
+            {text: "Zeus", correct: false},
+            {text: "Hades", correct: false},
+            {text: "Poseidon", correct: true},
+            {text: "Apollo", correct: false},
+        ]
+    }
+    
+];
 
-    <?php
-        include 'connection.php';
-        
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['quiz_id'])) {
-            $quiz_id = $_POST['quiz_id'];
-            
-            $sql = "SELECT * FROM quiz_questions WHERE quiz_id = $quiz_id";
-            $result = $link->query($sql);
 
-            $questions = array();
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $question = array(
-                        'question' => $row['question_text'],
-                        'answers' => array(
-                            array('text' => $row['correct_answer'], 'correct' => true),
-                            array('text' => $row['wrong_answer1'], 'correct' => false),
-                            array('text' => $row['wrong_answer2'], 'correct' => false),
-                            array('text' => $row['wrong_answer3'], 'correct' => false)
-                        )
-                    );
-                    array_push($questions, $question);
-                }
-            }
-        } else {
-            echo "No quiz ID received.";
-        }
-
-        $link->close();
-        ?>
-    <head>
-        <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width">
-        <title>
-            My Quiz
-        </title>
-        <link rel="stylesheet" href="quiz.css" type="text/css" />
-    </head>
-
-    <body>
-        <div class="menu-bar">
-            <button id="home-button"><a href="quiz.html">Home</a></button>
-            <button id="logout-button"><a href="login.php">Logout</a></button>
-        </div>                      
-        <div class="name">Online Quiz</div>
-        <div class="main">
-            <div class="quiz">               
-                <div class="question-number">Question <span id="question-number">1</span>/<span id="total-questions">10</span>
-                    <div class="timer" id="timer"></div> 
-                    <hr class="line">
-                </div>
-                <h1 id="question">Que</h1>
-                <div id="answer-buttons">
-                    <button class="btn">Option 1</button>
-                    <button class="btn">Option 2</button>
-                    <button class="btn">Option 3</button>
-                    <button class="btn">Option 4</button>
-                </div>
-                <button id="next-button">Next</button>
-            </div>
-        </div>
-        <script >
-const questions = <?php echo json_encode($questions); ?>;
 let timer;
 let timeLeft = 30; 
 
@@ -234,6 +262,3 @@ nextButton.addEventListener("click", () => {
 });
 
 startQuiz();
-</script>  
-    </body>
-</html>

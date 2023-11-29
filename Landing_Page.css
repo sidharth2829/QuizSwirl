@@ -1,0 +1,86 @@
+body
+{
+    height: 100%;
+background-color: black;
+overflow: hidden;
+}
+#heading
+{
+    color: whitesmoke;
+    font-family: "Exo 2";
+    font-size: 1000%;
+    padding-left: 5%;
+    padding-top: 5%;
+    
+}
+#Get-Started
+{
+    color: white;
+    font-family: "Exo 2";
+    margin-top: 5%;
+    padding-left: 20%;
+    font-size: 140%;
+}
+#Get-Started:hover
+{
+    font-size: 180%;
+    cursor: pointer;
+}
+#animation-rows
+{
+    display: flex;
+}
+#animation-rows
+{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position:absolute;
+    height: 150%;
+    width: 100%;
+    transform: rotate(-45deg) translate(35%,30%);
+}
+@keyframes move{
+ from{transform: translate(100%);}
+ to{transform: translate(900%);}
+}
+#animation-image-1
+{
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+#animation-image-2
+{
+    animation-name: move;
+    animation-duration: 2.8s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+#animation-image-3
+{
+    animation-name: move;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+#animation-image-4
+{
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+#animation-image-5
+{
+    animation-name: move;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+#animation-image-6
+{
+    animation-name: move;
+    animation-duration: 2.5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
