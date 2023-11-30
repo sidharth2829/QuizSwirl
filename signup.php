@@ -1,3 +1,29 @@
+<?php
+ob_start();
+session_start();
+include "connection.php";
+
+if (isset($_POST["submit"])) 
+{
+    $count = 0;
+    $res = mysqli_query($link, "select * from registration where username='$_POST[username]'") or die(mysqli_error($link));
+    $count = mysqli_num_rows($res);
+
+    if ($count > 0) 
+    {
+        echo '<script type="text/javascript">alert("This username already exists.");</script>';
+    } else 
+    {
+        mysqli_query($link, "insert into registration values('$_POST[firstname]','$_POST[lastname]','$_POST[username]','$_POST[email]','$_POST[password]','$_POST[contact]')") or die(mysqli_error($link));
+
+        $_SESSION['username'] = $_POST['username'];
+
+        header("Location: quiz_selector.php"); 
+        exit();
+    }        
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
