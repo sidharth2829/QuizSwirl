@@ -1,9 +1,12 @@
 body {
     font-family: "Exo 2", Arial, sans-serif;
     background-color: black;
-    overflow: hidden;
     margin: 0;
     padding: 0;
+background-attachment : fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(assets/6.jpg);
 }
 
 .container {
@@ -16,22 +19,28 @@ body {
 
 .header {
     color: whitesmoke;
-    font-size: 3vw;
+    font-size: 2vw;
     padding: 2% 0;
+margin-top : 8%;
 }
+.quiz-form
+{
 
+width : 100vh;
+}
 form {
-    width: 60%;
     margin: 5% auto;
-    padding: 2%;
+    padding: 4%;
     background-color: #fff;
-    border-radius: 2vw;
+    border-radius: 1.5vw;
     box-shadow: 0 0 1% 0 rgba(0,0,0,0.1);
+width: 100%;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 2%;
+    font-size: 2vw;
 }
 
 label {
@@ -51,6 +60,8 @@ input[type="text"] {
 button {
     padding: 2% 4%;
     margin-top: 2%;
+margin-bottom : 2%;
+margin-left : 38%;
     border: none;
     border-radius: 3vw;
     cursor: pointer;
