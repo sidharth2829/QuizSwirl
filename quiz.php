@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
 
-<?php
-include 'connection.php';
+    <?php
+        include 'connection.php';
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['quiz_id'])) {
+            $quiz_id = $_POST['quiz_id'];
+            
+            $sql = "SELECT * FROM quiz_questions WHERE quiz_id = $quiz_id";
+            $result = $link->query($sql);
 
-$sql = "SELECT * FROM quiz_questions";
-$result = $link->query($sql);
+            $questions = array();
 
-$questions = array();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $question = array(
+                        'question' => $row['question_text'],
+                        'answers' => array(
+                            array('text' => $row['correct_answer'], 'correct' => true),
+                            array('text' => $row['wrong_answer1'], 'correct' => false),
+                            array('text' => $row['wrong_answer2'], 'correct' => false),
+                            array('text' => $row['wrong_answer3'], 'correct' => false)
+                        )
+                    );
+                    array_push($questions, $question);
+                }
+            }
+        } else {
+            echo "No quiz ID received.";
+        }
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $question = array(
-            'question' => $row['question_text'],
-            'answers' => array(
-                array('text' => $row['correct_answer'], 'correct' => true),
-                array('text' => $row['wrong_answer1'], 'correct' => false),
-                array('text' => $row['wrong_answer2'], 'correct' => false),
-                array('text' => $row['wrong_answer3'], 'correct' => false)
-            )
-        );
-        array_push($questions, $question);
-    }
-}
-
-$link->close();
-?>
+        $link->close();
+        ?>
     <head>
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width">

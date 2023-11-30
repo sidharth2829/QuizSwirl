@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Options</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            /* Add your background image here */
+            background-image: url("assets/6.jpg");
+            color: whitesmoke;
+            background-attachment: fixed;
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1{
+            font-size: 8vh;
+        }
+        #heading {
+            font-size: 2vw;
+            padding-top: 2vw;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 3vw;
+            margin-top: 2vw;
+            flex-direction: column;
+        }
+
+        .login-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 1vw 2vw;
+            border-radius: 1vw;
+            cursor: pointer;
+            font-size: 2vw;
+            height: 15vh;
+
+        }
+
+        .login-button:hover {
+            background-color: #338938;
+            width: 120%;
+            height : 18vh;
+        }
+    </style>
+</head>
+<body>
+    <div><h1>QuizSwirl</h1></div>
+    <div id="heading">Choose Login Option</div>
+    <div class="button-container">
+        <button class="login-button" onclick="location.href='admin_login.php'">Admin Login</button>
+        <button class="login-button" onclick="location.href='login.php'">User Login</button>
+    </div>
+</body>
+</html>
