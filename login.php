@@ -62,7 +62,7 @@ if (isset($_POST["login"]))
                                 <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
                             </div>
                             <button type="submit" name="login" class="btn btn-success btn-block loginbtn">Login</button>
-                            <a class="btn btn-default btn-block" href="register.php">Sign Up</a>
+                            <a class="btn btn-default btn-block" href="signup.php">Sign Up</a>
                             <div class="alert alert-danger" id="failure" style="margin-top: 10px; <?php if ($count == 0) echo 'display: block;'; else echo 'display: none;'; ?>">
                                 <strong>Does not match!</strong> Invalid Username or Password
                             </div>
