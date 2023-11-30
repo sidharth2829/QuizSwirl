@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Quiz Results</title>
-    <link rel="stylesheet" href="/result.css">
+    <link rel="stylesheet" href="result.css">
 </head>
 <body>
         <div class="menu-bar">
