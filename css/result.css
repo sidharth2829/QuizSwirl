@@ -1,0 +1,105 @@
+        body 
+        {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            text-align: center;
+            /* padding: 20px; */
+
+            background-image: url(/assets/3.jpg);
+            margin: 0px;
+            padding: 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .menu-bar 
+        { 
+            /* background-color: darkblue; */
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .menu-bar a 
+        {
+            text-decoration: none;
+            /* color: #000000;  */
+        }
+
+        #home-button 
+        {
+            background-color: rgba(255, 254, 254, 0.9);
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        #logout-button 
+        {
+            background-color: rgb(255, 255, 255);
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        h1 
+        {
+            color: white;
+            font-size:300%;
+            text-shadow: 2px 2px 3px black, 2px 2px 3px white;
+            /* background-color: black; */
+        }
+
+        .user-score 
+        {
+            background-color: lightgrey;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;           
+        }
+
+        .user-score h2 
+        {
+            color: black;
+        }
+
+        .user-score p 
+        {
+            color: black;
+        }
+
+        .participants-table 
+        {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 15%;
+        }
+
+        .participants-table th, .participants-table td 
+        {
+            padding: 8px 12px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .participants-table th 
+        {
+            background-color: black;
+            color: #fff;
+        }
+
+        .participants-table tr:nth-child(even) 
+        {
+            background-color: lightgray;
+        }
+
+        .participants-table tr:nth-child(odd) 
+        {
+            background-color: white;
+        }

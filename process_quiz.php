@@ -1,40 +1,53 @@
 <?php
+echo"bhoot";
 include 'connection.php';
+session_start();
 
-// Retrieve the quiz ID from the URL parameter
-if (isset($_GET['quiz_id'])) {
-    $quiz_id = $_GET['quiz_id'];
+// Retrieve the quiz ID from the session
+if (isset($_SESSION['quiz_id'])) {
+    $quiz_id = $_SESSION['quiz_id'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $questions = $_POST['question'];
-        $correctAnswers = $_POST['correctAnswer'];
-        $wrongAnswers1 = $_POST['wrongAnswer1'];
-        $wrongAnswers2 = $_POST['wrongAnswer2'];
-        $wrongAnswers3 = $_POST['wrongAnswer3'];
+        // Assuming you're sending the arrays as JSON strings in the request body
+        $questions = json_decode($_POST['questions'], true);
+        $correctAnswers = json_decode($_POST['correctAnswers'], true);
+        $wrongAnswers1 = json_decode($_POST['wrongAnswers1'], true);
+        $wrongAnswers2 = json_decode($_POST['wrongAnswers2'], true);
+        $wrongAnswers3 = json_decode($_POST['wrongAnswers3'], true);
 
         // Assuming each array has the same number of elements
         $length = count($questions);
 
+        // Prepare a SQL statement for insertion
+        $stmt = $link->prepare("INSERT INTO quiz_questions (quiz_id, question_text, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3)
+                                VALUES (?, ?, ?, ?, ?, ?)");
+
+        // Bind parameters
+        $stmt->bind_param("isssss", $quiz_id, $question, $correctAnswer, $wrongAnswer1, $wrongAnswer2, $wrongAnswer3);
+
         for ($i = 0; $i < $length; $i++) {
-            $question = $link->real_escape_string($questions[$i]);
-            $correctAnswer = $link->real_escape_string($correctAnswers[$i]);
-            $wrongAnswer1 = $link->real_escape_string($wrongAnswers1[$i]);
-            $wrongAnswer2 = $link->real_escape_string($wrongAnswers2[$i]);
-            $wrongAnswer3 = $link->real_escape_string($wrongAnswers3[$i]);
+            $question = $questions[$i];
+            $correctAnswer = $correctAnswers[$i];
+            $wrongAnswer1 = $wrongAnswers1[$i];
+            $wrongAnswer2 = $wrongAnswers2[$i];
+            $wrongAnswer3 = $wrongAnswers3[$i];
 
-            $sql = "INSERT INTO quiz_questions (quiz_id, question_text, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3)
-                    VALUES ('$quiz_id', '$question', '$correctAnswer', '$wrongAnswer1', '$wrongAnswer2', '$wrongAnswer3')";
-
-            if ($link->query($sql) !== TRUE) {
-                echo "Error: " . $sql . "<br>" . $link->error;
+            // Execute the prepared statement
+            if (!$stmt->execute()) {
+                echo "Error: " . $stmt->error;
             }
         }
+
+        // Close the statement
+        $stmt->close();
+
         // After processing questions, you can redirect or perform any other actions as needed
+        echo "Questions submitted successfully!";
     } else {
         echo "Invalid request method";
     }
 } else {
-    echo "No quiz ID received.";
+    echo "No quiz ID found in session.";
 }
 
 $link->close();
