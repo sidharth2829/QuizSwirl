@@ -8,7 +8,7 @@
 </head>
 <body>
         <div class="menu-bar">
-            <button id="home-button"><a href="quiz.html">Home</a></button>
+            <button id="home-button"><a href="quiz_selector.php">Home</a></button>
             <button id="logout-button"><a href="login.php">Logout</a></button>
         </div>
         <h1>Quiz Results</h1>

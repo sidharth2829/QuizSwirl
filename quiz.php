@@ -43,7 +43,7 @@
 
     <body>
         <div class="menu-bar">
-            <button id="home-button"><a href="quiz.php">Home</a></button>
+            <button id="home-button"><a href="quiz_selector.php">Home</a></button>
             <button id="logout-button"><a href="login.php">Logout</a></button>
         </div>                      
         <div class="name">Online Quiz</div>
