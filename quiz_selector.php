@@ -6,6 +6,11 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+background-repeat: no-repeat;
+    background-size: cover;
+background-attachment : fixed;
+background-image: url(assets/3.jpg);
+
 }
 
 .container {
@@ -19,6 +24,8 @@
     border: 1px solid #ccc;
     padding: 3%;
     text-align: center;
+    background-color: rgba(214, 212, 212, 0.9);
+
 }
 
 .panel h2 {

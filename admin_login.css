@@ -1,23 +1,35 @@
-/* admin.css */
+/* admin_login.css */
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
 
+    background-image: url(assets/8.jpg);
+background-attachment : fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.main-content
+{
+width : 80%;
+}
 .container {
+
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+flex-direction : column;
 }
 
 .header {
     text-align: center;
     margin-bottom: 4%;
+color : white;
+font-size : 3vh;
+text-shadow: 1px 1px 2px black, 1.5px 1px 2px white;
 }
 
 .login-form {
@@ -25,7 +37,8 @@ body {
     padding: 4%;
     border-radius: 2%;
     box-shadow: 0 0 1% rgba(0, 0, 0, 0.1);
-    width: 40%;
+    width: 50%;
+margin:auto;
 }
 
 .form-group {
@@ -36,6 +49,7 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 2%;
+text-shadow: 0.5px 0.5px 1px black, 0.5px 0.5px 1px white;
 }
 
 input[type="text"],

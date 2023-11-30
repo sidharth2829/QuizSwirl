@@ -6,12 +6,15 @@
 
 body
 {
-    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+background-attachment : fixed;
+background-image: url(assets/1.jpg);
 }
 
 .menu-bar 
 { 
-    background-color: darkblue;
+
     color: #fff;
     padding: 10px 0;
     display: flex;
@@ -51,6 +54,7 @@ body
     font-weight: bold;
     font-size: 40px;
     padding-top: 50px;
+color: white;
 }
 
 .main

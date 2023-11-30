@@ -2,12 +2,13 @@ body
 {
     font-family: 'Poppins', sans-serif;
     /* background-color: #f4f4f4; */
-    background-image: url(/assets/1.jpg);
+    background-image: url(assets/1.jpg);
     margin: 0px;
     padding: 0px;
     background-color: rgba(180, 98, 232, 0.781);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+background-attachment : fixed;
 }
 
 .name
